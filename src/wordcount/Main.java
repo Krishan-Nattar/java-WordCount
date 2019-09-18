@@ -48,7 +48,11 @@ public class Main
             }
         });
 
-        System.out.println(sortedMap);
+        // System.out.println(sortedMap.get(2));
+        for(int i = 0; i<50; i++)
+        {
+            System.out.println("'" + sortedMap.get(i).getKey()+ "'" + " appears " + sortedMap.get(i).getValue() + " times!");
+        }
         
 
 
