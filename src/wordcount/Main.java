@@ -14,19 +14,28 @@ public class Main
             untext = untext.replaceAll("[[\\.\\?\\!\\,\\;\\:\\{\\}\\(\\)\\']]", "");
         String[] words = untext.split(" +");
 
-        HashMap<Integer, Words> wordsHashMap = new HashMap<Integer, Words>();
+        HashMap<String, Integer> wordsHashMap = new HashMap<String, Integer>();
         ArrayList<Words> wordsArrayList = new ArrayList<Words>();
 
 
         for(String w: words)
         {
-            wordsArrayList.add(new Words(w));
+            // wordsArrayList.add(new Words(w));
+            Integer current = 1;
+            if(wordsHashMap.containsKey(w))
+            {
+                current = wordsHashMap.get(w);
+                current++;
+            }
+            wordsHashMap.put(w, current);
         }
 
-        for(Words w: wordsArrayList)
-        {
-
-        }
+        System.out.println(wordsHashMap.get("rights"));
+        
+        // for(Words w: wordsArrayList)
+        // {
+            // wordsHashMap.put(w, 1);
+        // }
 //        System.out.println(parts);
 //        System.out.println("hello");
 //        for(String s:parts)
