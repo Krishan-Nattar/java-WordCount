@@ -22,5 +22,10 @@ public class Words
         this.count += 1;
     }
 
+    public String getWord()
+    {
+        return this.word;
+    }
+
     
 }
