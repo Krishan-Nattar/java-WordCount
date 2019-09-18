@@ -49,10 +49,28 @@ public class Main
         });
 
         // System.out.println(sortedMap.get(2));
+        ArrayList<HashMap.Entry<String, Integer>> sortedMap2 = new ArrayList<HashMap.Entry<String, Integer>>();
         for(int i = 0; i<50; i++)
         {
-            System.out.println("'" + sortedMap.get(i).getKey()+ "'" + " appears " + sortedMap.get(i).getValue() + " times!");
+            // System.out.println("'" + sortedMap.get(i).getKey()+ "'" + " appears " + sortedMap.get(i).getValue() + " times!");
+            sortedMap2.add(sortedMap.get(i));
         }
+
+        Collections.sort(sortedMap2, new Comparator<HashMap.Entry<String, Integer>>()
+        {
+            public int compare(HashMap.Entry<String, Integer> word1, HashMap.Entry<String, Integer> word2)
+            {
+                // return word2.getKey() - word1.getKey();
+                return word1.getKey().compareToIgnoreCase(word2.getKey());
+            }
+        });
+        int count = 0;
+        for(HashMap.Entry<String, Integer> w: sortedMap2)
+        {
+            count++;
+            System.out.print(count + ": '" + w.getKey() + "'" + " appeared " + w.getValue() + " times!\n");
+        }
+
         
 
 
