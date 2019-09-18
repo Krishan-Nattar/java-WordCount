@@ -39,6 +39,15 @@ public class Main
         ArrayList<HashMap.Entry<String, Integer>> sortedMap = new ArrayList<HashMap.Entry<String, Integer>>();
         sortedMap.addAll(wordsHashMap.entrySet());
 
+        // System.out.println(sortedMap);
+        Collections.sort(sortedMap, new Comparator<HashMap.Entry<String, Integer>>()
+        {
+            public int compare(HashMap.Entry<String, Integer> word1, HashMap.Entry<String, Integer> word2)
+            {
+                return word2.getValue() - word1.getValue();
+            }
+        });
+
         System.out.println(sortedMap);
         
 
