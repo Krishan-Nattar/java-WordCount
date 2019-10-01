@@ -1,31 +1,24 @@
 package wordcount;
 
-public class Words
-{
-    private int count =0;
+public class Words {
+    private int count = 0;
     private String word;
 
-    public Words(String word)
-    {
+    public Words(String word) {
         this.word = word;
         this.count += 1;
     }
-    
 
-    public int getCount()
-    {
+    public int getCount() {
         return this.count;
     }
 
-    public void addCount()
-    {
+    public void addCount() {
         this.count += 1;
     }
 
-    public String getWord()
-    {
+    public String getWord() {
         return this.word;
     }
 
-    
 }
